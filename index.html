@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Digital Clock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="clock">
+    <span id="hrs">00</span>
+    <span>:</span>
+    <span id="min">00</span>
+    <span>:</span>
+    <span id="sec">00</span>
+  </div>
+
+</body>
+<script>
+  var hours = document.getElementById("hrs");
+  var minutes = document.getElementById("min");
+  var seconds = document.getElementById("sec");
+
+  setInterval(() => {
+    var time = new Date();
+    hours.innerHTML = (time.getHours() < 10 ? "0" : "") + time.getHours();
+    minutes.innerHTML = (time.getMinutes() < 10 ? "0" : "") + time.getMinutes();
+    seconds.innerHTML = (time.getSeconds() < 10 ? "0" : "") + time.getSeconds();
+  }, 1000);
+
+</script>
+
+</html>
